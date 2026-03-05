@@ -2,6 +2,38 @@
 \input{meta}
 
 % Package imports go here.
+\usepackage{graphicx} 
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{subcaption}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
 
 % Local commands go here.
 
@@ -9,12 +41,12 @@
 %\input{aglossary.tex}
 %\makeglossaries
 
-\title{Chromatic PSF in LSSTCam}
+\title{Impact of Including Wavelength-dependent PSF Modeling in Rubin Commissioning Data}
 
 % This can write metadata into the PDF.
 % Update keywords and author information as necessary.
 \hypersetup{
-    pdftitle={Chromatic PSF in LSSTCam},
+    pdftitle={Impact of Including Wavelength-dependent PSF Modeling in Rubin Commissioning Data},
     pdfauthor={AashayPai},
     pdfkeywords={}
 }
