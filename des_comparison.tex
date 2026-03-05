@@ -1,0 +1,52 @@
+\section{Comparison to the Dark Energy Survey}\label{sec:des}
+
+The Dark Energy Survey (DES) was a six-year optical and near-infrared imaging survey designed to investigate the origin of cosmic acceleration. 
+DES operated from 2013 to 2019 using the Dark Energy Camera (DECam) mounted on the \SI{4}{\m} Victor M.\ Blanco Telescope at Cerro Tololo Inter-American Observatory in Chile. 
+DECam, the camera used to conduct the survey, is a 570-megapixel wide-field imager with a $\sim3\,\mathrm{deg}^2$ field of view, consisting of 62 science CCDs. 
+The survey imaged approximately \SI{5000}{deg^2} of the southern sky in five broadband filters ($grizY$) to a typical depth of $i \approx 24$\,mag (10$\sigma$ for galaxies). 
+
+The PSF pipelines used by the Rubin Observatory are modelled after the DES pipelines, including the use of the same PSF modelling software: \texttt{PiFF}.
+As the two surveys share similar science goals, we compare current Rubin Observatory PSF characteristics to DES Year 6 PSF results \citep{schutt2025}. The DES Y6 PSF star sample consists of $\sim$ 110 million stars, while the Rubin week 49 DRP data contains $\sim$ 153 million stars.
+
+\begin{figure}[h!]
+    \centering
+\includegraphics[width=0.4\textwidth]{figures/des_mag.pdf}
+    \caption{DES Y6 PSF $\delta T/T$, $\delta e_1$ and $\delta e_2$ as a function of magnitude. Stars are divided into equal-sized colour bins of $g-i \in [0.0, 0.8, 2.5, 3.5]$.} 
+    \label{fig:des_mag}
+\end{figure}
+
+Figure~\ref{fig:des_mag} shows the dependence of chromatically-fitted PSF $\delta T/T$, $\delta e_1$ and $\delta e_2$ residuals on magnitude in DES Y6 data. 
+Comparing the residuals to Fig.~\ref{subfig:residuals_vs_mag_b}, we find that the magnitude of \texttt{PiFF} residuals are on par with DES levels, even though the overall trend looks different.
+
+\begin{figure}[h!]
+    \centering
+\includegraphics[width=0.5\textwidth]{figures/des_color.pdf}
+    \caption{DES Y6 residuals as a function of $g-i$ colour (for the $gri$ bands) and $i-z$ colour (for the $z$ band).} 
+    \label{fig:des_color}
+\end{figure}
+
+Figure~\ref{fig:des_color} shows the DES Y6 PSF residuals as a function of $g-i$ and $i-z$ colour. 
+Comparing the colour dependence to Fig.~\ref{subfig:color_vs_residuals_b}, DES Y6 $g$ band $\delta T/T$ residuals are up to $\sim$ 50\% larger than Rubin.
+
+\begin{figure}[h!]
+  \centering
+
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/des_dcr_g.pdf}
+    \label{subfig:des_dcr_g}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/des_dcr_r.pdf}
+    \label{subfig:des_dcr_r}
+  \end{subfigure}
+
+  \caption{DES Y6 PSF $\delta e_1$ and $\delta e_2$ as a function of $\mathrm{DCR_1}$ and $\mathrm{DCR_2}$ respectively, in the $g$ and $r$ bands.}
+  \label{fig:des_dcr}
+\end{figure}
+
+Figure~\ref{fig:des_dcr} shows the DES Y6 ellipticity residuals as a function of $\mathrm{DCR_1}$ and $\mathrm{DCR_2}$ in the $g$ and $r$ bands. 
+Comparing these to Fig.~\ref{subfig:g_dcr_b} and Fig.~\ref{subfig:r_dcr_b}, we find that in the Rubin data, the PSF model errors coming from DCR is $\sim$ 80\% better than that in DES Y6 in the $g$ band and to similar levels in the $r$ band.
+

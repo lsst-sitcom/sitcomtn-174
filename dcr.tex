@@ -1,0 +1,19 @@
+\section{Differential Chromatic Refraction}
+As light passes through the Earth’s atmosphere, it is refracted toward the zenith. 
+The magnitude of this refraction is wavelength-dependent, with shorter (bluer) wavelengths 
+experiencing stronger refraction than longer (redder) wavelengths. This chromatic dependence 
+leads to small, band-dependent shifts in the measured positions of astronomical objects, 
+which in turn propagate into the modeling of the point-spread function (PSF). 
+Equation~\ref{eq:dcr} defines $DCR_1$ and $DCR_2$ as the components of the differential 
+chromatic refraction along the $e_1$ and $e_2$ directions, respectively, expressed as 
+functions of the zenith angle $z$ and the parallactic angle $q$. To compute the DCR, 
+we first determine the local sidereal time for each visit and use it to calculate 
+$z$ and $q$ for every star.
+
+\begin{equation}
+\label{eq:dcr}
+    \begin{aligned}
+        DCR_1 \equiv \tan^2(z)\cos(2q) \\
+        DCR_2 \equiv \tan^2(z)\sin(2q)
+    \end{aligned}
+\end{equation}

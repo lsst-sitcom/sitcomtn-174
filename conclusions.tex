@@ -1,0 +1,17 @@
+\section{Conclusions}
+
+In this note, we have evaluated the impact of enabling chromatic PSF modeling during commissioning of the Vera C. Rubin Observatory using weekly DRP data (\texttt{w\_2025\_49}). By incorporating colour-dependent terms into the \texttt{PiFF} PSF model, we directly address wavelength-dependent effects, in particular Differential Chromatic Refraction (DCR), which is expected to be one of the dominant chromatic systematics in ground-based weak lensing measurements.
+
+Using $\sim$153 million stellar measurements across 4898 visits, we have shown that enabling a second-order polynomial dependence in both spatial position and colour substantially improves PSF residuals:
+
+\begin{itemize}
+    \item \textbf{Residuals vs. magnitude:} Chromatic fitting significantly reduces the spread in PSF size and ellipticity residuals between colour bins, particularly in the faint regime. In the $g$ band, where DCR is strongest, residuals in $\delta T/T$ decrease by $\sim$50\%, and faint-end ellipticity residuals tighten by up to $\sim$75\%.
+    
+    \item \textbf{Residuals vs. colour:} The strong colour dependence observed in the non-chromatic configuration is largely mitigated in the $g$ band when chromatic fitting is enabled. Remaining trends in the $u$ band are likely driven by limited stellar statistics in the reddest colour bins rather than fundamental modeling limitations.
+    
+    \item \textbf{Residuals vs. DCR:} The most dramatic improvement is seen in DCR-dependent trends. In the $g$ band, chromatic PSF modeling reduces DCR-correlated ellipticity residuals by up to $\sim$90--95\%, effectively suppressing these systematics by nearly an order of magnitude. Improvements in the $r$ band are more modest ($\sim$50\%) but still significant.
+\end{itemize}
+
+When compared to Dark Energy Survey (DES) Year 6 results, Rubin commissioning data with chromatic PSF fitting achieves residual levels that are comparable to, and in some cases improved relative to, DES. In particular, DCR-dependent ellipticity residuals in the $g$ band are suppressed to levels that outperform DES by up to $\sim$80\%, demonstrating that the Rubin PSF modeling framework is already competitive at the commissioning stage.
+
+Finally, we propagated DCR-induced PSF residuals to forecasts of cosmic shear systematics. Without chromatic correction, the induced additive systematic $\langle \delta e_{\mathrm{DCR}} \, \delta e_{\mathrm{DCR}} \rangle$ can be comparable to or exceed the expected LSST Year 10 statistical uncertainty in the most affected tomographic bins. With chromatic PSF modeling enabled, this contribution is reduced by approximately two orders of magnitude, bringing the DCR-induced shear systematic well below the statistical error budget across relevant angular scales.

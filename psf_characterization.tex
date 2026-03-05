@@ -1,0 +1,32 @@
+\section{PSF Characterization}
+\subsection{Fitting}
+For a given single-visit image processed by the DRP, the PSF is fit independently on each CCD. 
+Under the default DRP configuration, which does not include chromatic corrections, the PSF 
+modeling is performed using \texttt{PiFF}. The input to \texttt{PiFF} is a catalog of all 
+detected objects in the image, together with their positions in sky coordinates. From this 
+catalog, \texttt{PiFF} selects two subsets of stars: a primary sample used to fit the PSF 
+model and a smaller, reserved sample used for PSF diagnostic tests. A model is then fit to the stellar images to obtain a maximum-likelihood 
+estimate of the PSF parameters (position, and optionally, wavelength) at each stellar location. Finally, the fitted model parameters are interpolated across 
+the stellar sample to estimate the PSF over the full focal plane using a second order polynomial. To incorporate colour 
+dependence in the PSF modeling, we provide \texttt{PiFF} with stellar colours derived using the 
+Forward Global Calibration Method \citep[FGCM;][]{burke2017}, which are computed in a preceding 
+step of the DRP.
+
+\subsection{PSF Shape Definitions}
+Equation \ref{eq:psf_residuals} shows the definitions for PSF size ($T$) and ellipticity ($e_1$ \& $e_2$) that are used in this work.
+\begin{equation}
+\label{eq:psf_residuals}
+    \begin{aligned}
+        T \equiv i_{xx} + i_{yy}  \\
+        e_1 \equiv \frac{i_{xx}-i_{yy}}{i_{xx}+i_{yy}}\\
+        e_2 \equiv \frac{2i_{xy}}{i_{xx}+i_{yy}}
+    \end{aligned}
+\end{equation}
+
+For each quantity above ($T$, $e_1$, $e_2$), we also define the residual to be the difference between the measured value and the fit value of the model: $\delta X \equiv X_{\rm PSF} - X_{\rm model}$ and $\delta X/X \equiv (X_{\rm PSF}-X_{\rm model})/X_{\rm PSF}$.
+
+\subsection{PSF Fitting Configuration}
+We test several \texttt{PiFF} chromatic fitting configurations to minimize the error in the PSF model due to chromatic effects. 
+We saw most improvement in the PSF fit by using a 2nd-order polynomial fit in spatial position and colour, with no significant improvement from using higher orders. 
+The final configuration is shown below.
+\lstinputlisting[language=Python]{finalizeCharacterizationConfig.py}
